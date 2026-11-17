@@ -18,6 +18,23 @@ Instead of relying on payroll records or employee paperwork, I used PowerShell t
 I checked the last time each account authenticated with the domain controller. 
 This gave me a way to identify accounts that had not been used recently without depending on employee records being updated or names matching across different systems.
 
+
+
+
+
+
+## Before you start
+
+- Windows Server with the ActiveDirectory PowerShell module
+
+      Import-Module ActiveDirectory
+
+- Rights to modify user objects in the domain
+- An authorising ticket number, in the form NMG-0000
+- A Disabled Users OU at the root of the domain
+- A writable reports folder. Create it if it does not exist:
+
+      New-Item -Path "C:\Reports\Offboarding" -ItemType Dir
 ## Tools
 
 ### Find-StaleAccounts.ps1
